@@ -15,9 +15,17 @@ groceryItems = [
 console.log(applySale(groceryItems)); // [ {name: "walnuts", price: 12} ]
 
 *******************************************************************************/
+
+/* 
+Test Specs:
+applySale() 
+5) should return items that are prcied more than $10 with a 20% discount
+6) should not give a discount to items less than or equal to $10
+*/
+
 // Your code here 
 function applySale(items) {
-  // Your code here 
+  
 }
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS LINE**********************/

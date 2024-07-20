@@ -16,6 +16,13 @@ address3("Blaxland NSW 2774");                       // "42 Wallaby Way Blaxland
 
 ***********************************************************************/
 
+/* 
+Test Specs: 
+createAddress() 
+10) should return a function that accepts a string
+11) should return a new function for each initial argument 
+*/
+
 function createAddress(street) {
   // Your code here 
 }
