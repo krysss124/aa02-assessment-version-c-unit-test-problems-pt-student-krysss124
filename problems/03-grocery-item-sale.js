@@ -24,8 +24,18 @@ applySale()
 */
 
 // Your code here 
-function applySale(items) {
-  
+function applySale(items) { // `applySale(items` is taking an array `items` containing objects representing grocery items.
+  let qualifyingItems = items.filter(item => item.price > 10); // `qualifyingItems` is using `filter()` to create a new array containing only items where `item.price`
+  // is greater than 10.
+  let saleItems = qualifyingItems.map(item => { // `saleItems` is using `map()` to iterate over `qualifyingItems`.
+  let discountedPrice = item.price * 0.8; // Is calculating the `discountedPrice` by multiplying `item.price` by 0.8.
+    return {
+      name: item.name,
+      price: Math.floor(discountedPrice) // Is using `math.floor(discountedPrice)` to round down to the nearest integer.
+    };
+  });
+
+  return saleItems; // `applySale` is returning `saleItems` which is now an array of objects with items that qualify for the sale ane their respective discounted prices.
 }
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS LINE**********************/

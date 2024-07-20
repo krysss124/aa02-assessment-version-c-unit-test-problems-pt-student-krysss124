@@ -18,11 +18,30 @@ leastFrequentLetter()
 4) should return any of the least frequent letters in the case of a tie
 */
 
-function leastFrequentLetter(string) { //Declare a function leastFrequentLetter(string)
-  for (let i = 0; i < string.length; i++) { //  set a for loop to read through the string arguement
-    if (i < 2) { // then make an if conditional
-      return string[i] // return the character that shows up the least or return any character w the lowest count
-    } 
+function leastFrequentLetter(string) {
+  let frequency = {}; // Setting `frequency` to an empty object to store the count of each character in the string.
+
+  for (let char of string) { // Iterating through each character in the `string`. If the character exists in `frequency`, it incriments its count; otherwise it initializes its
+    // count to 1.
+    if (frequency[char]) {
+      frequency[char]++;
+    } else {
+      frequency[char] = 1;
+    }
+  }
+
+  let minFrequency = Infinity; // Initializing `minFrequency` to `Infinity` and `leastFrequentChar` to `undefined`. Iterating through the `frequency` Object. If a character's
+  // count is less than `minFrequency`, it updates it and sets `leastFrequentChar` to that number.
+  let leastFrequentChar;
+
+  for (let char in frequency) {
+    if (frequency[char] < minFrequency) {
+      minFrequency = frequency[char];
+      leastFrequentChar = char;
+    }
+  }
+
+  return leastFrequentChar; // After iterating through all characters, it returns `leastFrequentChar`.
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

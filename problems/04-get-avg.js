@@ -22,6 +22,14 @@ getAverage()
 
 // Your code here 
 
+const getAverage = (...numbers) => { // Is defining the `getAverage` function using arrow function syntax and using the rest parameter `(...numbers)` to gather
+  // all arguments into an array named `numbers`.
+  let sum = numbers.reduce((acc, num) => acc + num, 0); // Iterating over the `numbers` array and accumulating the sum of all elements starting from an initial value of 0.
+  let average = sum / numbers.length; // Is calculating the average by dividing `sum` by the number of elements in the `numbers` array.
+  let formattedAverage = `$${average.toFixed(2)}`; // Is converting `average` to a string with exactly two decimal places using `toFixed(2)` and prepends a dollar sign (`$`).
+  return formattedAverage; // Is returning the formatted average of a string.
+};
+
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
   module.exports = getAverage;

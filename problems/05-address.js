@@ -23,8 +23,10 @@ createAddress()
 11) should return a new function for each initial argument 
 */
 
-function createAddress(street) {
-  // Your code here 
+function createAddress(street) { // `createAddress` is taking a `street` parameter and is returning a new function.
+  return function(restOfAddress) { // The inner function created by `createAddress` is accepting `restOfAddress` as its parameter.
+    return `${street} ${restOfAddress}`; 
+  }; 
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
